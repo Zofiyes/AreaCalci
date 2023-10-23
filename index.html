@@ -15,6 +15,16 @@
 		border: groove ;
 		border-bottom: none;
 	}
+	.btn
+	{
+		border-radius: 5px;
+		background-color: red;
+		color: #ffff;
+	}
+	.btn:hover
+	{
+		background-color:green;
+	}
 	
 </style>
 <script>
@@ -128,26 +138,26 @@ function areaOfCircle()
 	<h2>Rectangle &#9645;</h2>
 	Length: <input type = "number" placeholder="Enter Length" step="any" id="rl" />
 	Width: <input type="number" placeholder="Enter Width" step="any" id="rw"/>
-	<button onclick="areaOfRectangle()"> Calculate </button>
+	<button class="btn" onclick="areaOfRectangle()"> Calculate </button>
 	<p id="rectangleAns">Area of Rectangle: </p>
 	<hr>
 
 	<h2>Triangle &#9651;</h2>
 	Base: <input type = "number" placeholder="Enter Base" step="any" id="tbase" />
 	Height: <input type="number" placeholder="Enter Height" step="any" id="theight"/>
-	<button onclick="areaOfTriangle()"> Calculate </button>
+	<button class="btn" onclick="areaOfTriangle()"> Calculate </button>
 	<p id="triangleAns">Area of Triangle: </p>
 	<hr>
 
 	<h2>Square  <span style='font-size: 35px;' >&#9633;</span></h2>
 	Side Length: <input type = "number" placeholder="Enter Side length" step="any" id="ss" />
-	<button onclick="areaOfSquare()"> Calculate </button>
+	<button class="btn" onclick="areaOfSquare()"> Calculate </button>
 	<p id="squareAns">Area of Square: </p>
 	<hr>
 
 	<h2>Circle &#9711;</h2>
 	Radius: <input type = "number" placeholder="Enter Radius" step="any" id="cr" />
-	<button onclick="areaOfCircle()"> Calculate </button>
+	<button class="btn" onclick="areaOfCircle()"> Calculate </button>
 	<p id="circleAns">Area of Circle: </p>
 	<hr>
 </form>
