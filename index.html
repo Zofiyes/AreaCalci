@@ -1,0 +1,156 @@
+<html>
+<head>
+<title> Area Calculator By Saurabh Varma</title>
+<style>
+	*{ font-family: calibri;}
+	body { background-color: #F4BF96;}
+	.header 
+	{ 
+		background-color: black;
+		color:white;
+		border: solid;
+	}
+	hr 
+	{ 
+		border: groove ;
+		border-bottom: none;
+	}
+	
+</style>
+<script>
+function areaOfRectangle() 
+{
+	event.preventDefault();
+	const length = parseFloat(document.getElementById("rl").value);
+	const width = parseFloat(document.getElementById("rw").value);
+	if (rl.value == "" || rw.value == "")
+	{
+		alert("Inputs cannot be Empty!");
+		rectangleAns.innerHTML = "Area of Rectangle: ";
+		rl.value="";
+		rw.value="";
+		rl.focus();
+		return;
+	}
+	if (length <= 0 || width <= 0)
+	{
+        	alert("Both length and width must be positive numbers.");
+		rl.value="";
+		rw.value="";
+		rl.focus();
+		rectangleAns.innerHTML= "Area of Rectangle: ";
+        	return;
+	}
+	const result = length * width;
+	rectangleAns.innerHTML = "Area of Rectangle: " + result.toFixed(2);
+}
+
+function areaOfTriangle()
+{
+	event.preventDefault();
+	const base = parseFloat(document.getElementById("tbase").value);
+	const height = parseFloat(document.getElementById("theight").value);
+	if (tbase.value == "" || theight.value == "")
+	{
+		alert("Inputs cannot be Empty!");
+		triangleAns.innerHTML = "Area of Triangle: ";
+		tbase.value="";
+		theight.value="";
+		tbase.focus();
+		return;
+	}
+	if (base <= 0 || height <= 0)
+	{
+        	alert("Both base and height must be positive numbers.");
+		tbase.value="";
+		theight.value="";
+		tbase.focus();
+		triangleAns.innerHTML= "Area of Triangle: ";
+        	return;
+	}
+	const result = 0.5 * base * height;
+	triangleAns.innerHTML = "Area of Triangle: " + result.toFixed(2);
+}
+
+function areaOfSquare()
+{
+	event.preventDefault();
+	const side = parseFloat(document.getElementById("ss").value);
+	if (ss.value == "")
+	{
+		alert("Input cannot be Empty!");
+		ss.value="";
+		ss.focus();
+		squareAns.innerHTML="Area of Square: ";
+		return;
+	}
+	if (side <= 0)
+	{
+		alert("Side length must be a positive number.");
+		ss.value="";
+		ss.focus();
+		squareAns.innerHTML="Area of Square: ";
+		return;
+	}
+	const result = side * side;
+	squareAns.innerHTML = "Area of Square: " + result.toFixed(2);
+}
+
+function areaOfCircle()
+{
+	event.preventDefault();
+	const radius = parseFloat(document.getElementById("cr").value);
+	if(cr.value == "")
+	{
+		alert("Input cannot be Empty!");
+		cr.value="";
+		cr.focus();
+		circleAns.innerHTML="Area of Circle: ";
+		return;
+	}
+	if(radius <=0)
+	{
+		alert("Radius must be a positive number.");
+		cr.value="";
+		cr.focus();
+		circleAns.innerHTML="Ares of Circle: ";
+		return;
+	}
+	const result = Math.PI * radius**2;
+	circleAns.innerHTML = "Area of Circle: " + result.toFixed(2);
+}
+</script>	
+</head>
+<body>
+<center>
+	<h1 class="header"> Area Calculator</h1>
+<form>
+	<h2>Rectangle &#9645;</h2>
+	Length: <input type = "number" placeholder="Enter Length" step="any" id="rl" />
+	Width: <input type="number" placeholder="Enter Width" step="any" id="rw"/>
+	<button onclick="areaOfRectangle()"> Calculate </button>
+	<p id="rectangleAns">Area of Rectangle: </p>
+	<hr>
+
+	<h2>Triangle &#9651;</h2>
+	Base: <input type = "number" placeholder="Enter Base" step="any" id="tbase" />
+	Height: <input type="number" placeholder="Enter Height" step="any" id="theight"/>
+	<button onclick="areaOfTriangle()"> Calculate </button>
+	<p id="triangleAns">Area of Triangle: </p>
+	<hr>
+
+	<h2>Square  <span style='font-size: 35px;' >&#9633;</span></h2>
+	Side Length: <input type = "number" placeholder="Enter Side length" step="any" id="ss" />
+	<button onclick="areaOfSquare()"> Calculate </button>
+	<p id="squareAns">Area of Square: </p>
+	<hr>
+
+	<h2>Circle &#9711;</h2>
+	Radius: <input type = "number" placeholder="Enter Radius" step="any" id="cr" />
+	<button onclick="areaOfCircle()"> Calculate </button>
+	<p id="circleAns">Area of Circle: </p>
+	<hr>
+</form>
+</center>
+</body>
+</html>
